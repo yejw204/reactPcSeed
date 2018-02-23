@@ -1,0 +1,60 @@
+/**
+ * @file components/chart/Pie/Pie.js
+ *  饼图
+ * @author maoquan(maoquan@htsc.com)
+ */
+
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import Chart from '../../common/IECharts';
+
+export default class Pie extends PureComponent {
+  static propTypes = {
+    data: PropTypes.array.isRequired,
+  }
+
+  render() {
+    const { data } = this.props;
+    const options = {
+      title: {
+        text: '某站点用户访问来源',
+        subtext: '纯属虚构',
+        x: 'center',
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)',
+      },
+      legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
+      },
+      series: [
+        {
+          name: '访问来源',
+          type: 'pie',
+          radius: '55%',
+          center: ['50%', '60%'],
+          data: [...data],
+          itemStyle: {
+            emphasis: {
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: 'rgba(0, 0, 0, 0.5)',
+            },
+          },
+        },
+      ],
+    };
+    return (
+      <Chart
+        option={options}
+        resizable
+        style={{
+          height: '335px',
+        }}
+      />
+    );
+  }
+}

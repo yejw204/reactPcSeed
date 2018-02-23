@@ -3,8 +3,6 @@
 
 基于react技术栈的种子站点, 适用于企业中后台管理系统的快速搭建。
 
-demo(云桌面环境，根据develop分支自动构建): http://168.61.5.200/
-
 ## 开发环境
 
 windows下推荐安装终端环境：[cmder.net](http://cmder.net/)
@@ -24,7 +22,6 @@ npm run dev
 ```
 
 等待一会儿，系统自动打开浏览器，即可进行开发。
-
 ### 项目打包
 
 ```
@@ -32,8 +29,6 @@ npm run build
 ```
 
 运行完成后，在项目下生成dist目录，直接将dist目录下内容发布到生产环境下即可（nginx / apache等），人肉、jekins随便。
-
-如果项目部署在门户上(http://eip.htsc.com.cn/xxx)上，[门户部署指南](docs/withContextPath.md)
 
 ### 代码检查
 
